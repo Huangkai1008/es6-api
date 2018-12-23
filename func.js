@@ -24,6 +24,7 @@ function foo(p = x + 1) {
 
 
 
+
 x = 100;
 foo(x);
 
@@ -44,3 +45,28 @@ console.log(typeof {
     a: 1,
     b: 2
 })
+
+// rest参数 ...变量名 (类似python的可变参数*args)
+// rest参数就是数组
+function add(...values) {
+    let sum = 0;
+
+    for (var val of values) {
+        sum += val;
+    }
+
+    return sum;
+
+}
+
+console.log(add(2, 3, 4));
+
+function push(array, ...items) {
+    items.forEach(function (item) {
+        array.push(item);
+        console.log(item);
+    })
+}
+
+var a = [];
+push(a, 2, 3)
